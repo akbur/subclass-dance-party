@@ -24,5 +24,12 @@ Dancer.prototype.setPosition = function(top, left){
       top: top,
       left: left
     };
+    
     this.$node.css(styleSettings);
+    this.top = top;
+    this.left = left;
 };
+
+Dancer.prototype.lineUp = function(){
+  this.setPosition(this.top, 5);
+}
