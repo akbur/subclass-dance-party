@@ -19,7 +19,7 @@ Dancer.prototype.step = function(timeBetweenSteps){
 Dancer.prototype.setPosition = function(top, left){
     // Use css top and left properties to position our <span> tag
     // where it belongs on the page. See http://api.jquery.com/css/
-    //
+
     var styleSettings = {
       top: top,
       left: left

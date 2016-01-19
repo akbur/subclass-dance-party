@@ -24,12 +24,13 @@ $(document).ready(function(){
 
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $("body").width() * Math.random(),  
       Math.random() * 1000
     );
 
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
+    console.log(dancer.$node);
   });
 
 });
