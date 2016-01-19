@@ -3,11 +3,15 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url("https://0.s3.envato.com/files/31636475/Dance%20Floor%20II.jpg");
+  background-size: cover;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
-  color: lightblue;
+  font-family: 'Ubuntu', Arial, sans-serif;
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;  
 }
 .title, .actionButton{
   padding:5px 12px;
@@ -15,21 +19,37 @@ body, a:link, a:visited, a:active{
 }
 .topbar{
   height:32px;
-  background-color: #555;
+  /*background-color: #555;*/
 }
 .title{
-  background-color: #777;
+  /*background-color: #777;*/
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  border:15px solid #FFFF61;
+  border-radius:15px;
   position:absolute;
 }
+
 .jumpyDancer{
-  border:10px solid blue;
-  border-radius:10px;
+  border:15px solid #48157D;
+  border-radius:15px;
   position:absolute;
 }
+.expandyDancer{
+  border:20px solid #A3DC55;
+  border-width:100px;
+  border-radius:20px;
+  position:absolute;
+}
+/*
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 25px solid white;
+}
+*/
 
 
 
