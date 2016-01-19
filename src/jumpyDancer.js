@@ -1,9 +1,10 @@
 var JumpyDancer = function(top, left, timeBetweenSteps  ){
+  this.up = false;
   Dancer.call(this, top, left, timeBetweenSteps);
   // this.$node.html('<img src="" height="20" width="20">');
   this.$node.addClass("jumpyDancer");
  
-  this.up = false;
+  
 }
 
 JumpyDancer.prototype = Object.create(Dancer.prototype);
@@ -19,10 +20,10 @@ JumpyDancer.prototype.step = function(timeBetweenSteps){
     // this.$node.toggle("bounce", {times: 3}, "slow");
     
     if (this.up){
-      this.$node.css({"top": "+=5px"})
+      this.$node.css({"top": "+=30px"})
       this.up = false;
     }else{
-      this.$node.css({"top": "-=5px"});
+      this.$node.css({"top": "-=30px"});
       this.up = true;
     }
     
