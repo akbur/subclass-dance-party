@@ -3,9 +3,11 @@ var JumpyDancer = function(top, left, timeBetweenSteps  ){
   Dancer.call(this, top, left, timeBetweenSteps);
   // this.$node.html('<img src="" height="20" width="20">');
   this.$node.addClass("jumpyDancer");
- 
-  
-}
+  var context = this;
+  this.$node.on("mouseover", function(event){
+    JumpyDancer.prototype.mouseover.call(context);
+  });
+};
 
 JumpyDancer.prototype = Object.create(Dancer.prototype);
 JumpyDancer.prototype.constructor = JumpyDancer;
@@ -25,6 +27,12 @@ JumpyDancer.prototype.step = function(timeBetweenSteps){
     }else{
       this.$node.css({"top": "-=30px"});
       this.up = true;
-    }
-    
+    } 
 };
+
+JumpyDancer.prototype.mouseover = function() {
+  var negOrPos = Math.random() < 0.5 ? -1 : 1;
+  this.top += negOrPos * 40;
+  this.left += negOrPos * 40;
+  this.setPosition(this.top, this.left);
+}

@@ -33,10 +33,10 @@ $(document).ready(function(){
     console.log(dancer.$node);
   });
 
-  $(".lineUpButton").on("click", function(event){
+  $(".lineUpButton").on("click", function(){
     window.dancers.forEach(function(dancer){
       dancer.lineUp();
     });
   });
-
+  
 });
