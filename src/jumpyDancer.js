@@ -31,17 +31,14 @@ JumpyDancer.prototype.step = function(timeBetweenSteps){
 };
 
 JumpyDancer.prototype.mouseover = function() {
-  // var negOrPos = Math.random() < 0.5 ? -1 : 1;
-  // this.top += negOrPos * 40;
-  // this.left += negOrPos * 40;
 
-  var dir = randomDirection();
+  var dir = this._randomDirection();
   this.top += (dir[1] * 100);
   this.left += (dir[0] * 100);
   this.setPosition(this.top, this.left);
 }
 
-var randomDirection = function(){
+JumpyDancer.prototype._randomDirection = function(){
   var randX = Math.random() - 0.5;
   var randY = Math.random() - 0.5;
   var speed = Math.sqrt(randX * randX + randY * randY);
@@ -49,9 +46,3 @@ var randomDirection = function(){
   var dirY = randY/speed;
   return [dirX, dirY];
 }
-
-// var dist = function(x1, y1, x2, y2){
-//   var deltaX = x2 - x1;
-//   var deltaY = y2 - y1;
-//   return Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-// }
