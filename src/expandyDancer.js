@@ -8,7 +8,6 @@ ExpandyDancer.prototype = Object.create(Dancer.prototype);
 ExpandyDancer.prototype.constructor = ExpandyDancer;
 ExpandyDancer.prototype.step = function(timeBetweenSteps) {
   Dancer.prototype.step.call(this, timeBetweenSteps);
-  console.log(this);
   if (this.big) {
     this.$node.animate({"border-width":"-=40px", "border-radius":"-=40px"}, "slow");
     this.big = false;
