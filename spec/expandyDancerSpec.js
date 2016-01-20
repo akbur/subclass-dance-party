@@ -1,11 +1,12 @@
 describe("expandyDancer", function(){
+  
   var expandyDancer;
   var timeBetweenSteps = 100;
   var clock;
 
   beforeEach(function(){  
-  clock = sinon.useFakeTimers();
-  expandyDancer = new ExpandyDancer(10, 20, timeBetweenSteps) 
+    clock = sinon.useFakeTimers();
+    expandyDancer = new ExpandyDancer(10, 20, timeBetweenSteps) 
   })
 
   it("should have a jQuery $node object", function(){

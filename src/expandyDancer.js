@@ -1,4 +1,4 @@
-var ExpandyDancer = function(top, left, timeBetweenSteps){
+var ExpandyDancer = function(top, left, timeBetweenSteps) {
   this.big = false;
   Dancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass("expandyDancer");

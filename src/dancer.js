@@ -1,5 +1,5 @@
 // Creates and returns a new dancer object that can step
-var Dancer = function(top, left, timeBetweenSteps){
+var Dancer = function(top, left, timeBetweenSteps) {
 
   // use jQuery to create an HTML <span> tag
   this.$node = $('<span class="dancer"></span>');
@@ -11,25 +11,25 @@ var Dancer = function(top, left, timeBetweenSteps){
 
 };
 
-Dancer.prototype.step = function(timeBetweenSteps){
+Dancer.prototype.step = function(timeBetweenSteps) {
     // the basic dancer doesn't do anything interesting at all on each step,
     // it just schedules the next step
     setTimeout(this.step.bind(this, timeBetweenSteps), timeBetweenSteps);
     
 };  
-Dancer.prototype.setPosition = function(top, left){
+Dancer.prototype.setPosition = function(top, left) {
     // Use css top and left properties to position our <span> tag
     // where it belongs on the page. See http://api.jquery.com/css/
 
-    var styleSettings = {
-      top: top,
-      left: left
-    };
-    
-    this.$node.css(styleSettings);
-    this.top = top;
-    this.left = left;
-    this.checkForNeighbor();
+  var styleSettings = {
+    top: top,
+    left: left
+  };
+  
+  this.$node.css(styleSettings);
+  this.top = top;
+  this.left = left;
+  this.checkForNeighbor();
 };
 
 Dancer.prototype.lineUp = function(){
@@ -47,11 +47,11 @@ Dancer.prototype.checkForNeighbor = function() {
   window.dancers.forEach(function(dancer) {
 
     if (context !== dancer && context.distance(dancer) < 30) {
-        if (!context.$node.hasClass("white")){
-          context.$node.addClass("white");
-          dancer.$node.addClass("white");
-        }
+      if (!context.$node.hasClass("white")) {
+        context.$node.addClass("white");
+        dancer.$node.addClass("white");
       }
+    }
   });
  
 };

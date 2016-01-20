@@ -1,55 +1,58 @@
-body, html{
+body, html {
   height:100%;
 }
-body{
+body {
   margin: 0px;
   background-image: url("https://0.s3.envato.com/files/31636475/Dance%20Floor%20II.jpg");
   background-size: cover;
   font-size: 18px;
 }
-body, a:link, a:visited, a:active{
+body, a:link, a:visited, a:active {
   font-family: 'Ubuntu', Arial, sans-serif;
   color: white;
   padding: 5px 10px;
   text-decoration: none;  
 }
-.title, .actionButton{
+.title, .actionButton {
   padding:5px 12px;
   float:right;
 }
-.topbar{
+.topbar {
   height:32px;
-  /*background-color: #555;*/
 }
-.title{
-  /*background-color: #777;*/
-}
-.dancer{
+.dancer {
   border:15px solid #FFFF61;
   border-radius:15px;
   position:absolute;
 }
-
-.jumpyDancer{
-  border:15px solid #48157D;
-  border-radius:15px;
-  position:absolute;
+.jumpyDancer {
+  width: 0;
+  height: 0;
+  border-top: 25px solid #48157D;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 25px solid #48157D;
+  border-radius: 0;
 }
-.expandyDancer{
+.expandyDancer {
   border:20px solid #A3DC55;
   border-width:100px;
   border-radius:20px;
   position:absolute;
 }
-/*
-.triangle {
+.white {
+  border-color: white;
+}
+.jumpyDancer.white {
   width: 0;
   height: 0;
+  border-top: 25px solid white;
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
   border-bottom: 25px solid white;
+  border-radius: 0;
 }
-*/
+
 
 
 
