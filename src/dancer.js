@@ -8,7 +8,6 @@ var Dancer = function(top, left, timeBetweenSteps){
   // this one sets the position to some random default point within the body
   this.step(timeBetweenSteps);
   this.setPosition(top, left);
-  this.checkForNeighbor();
 
 };
 
@@ -30,10 +29,11 @@ Dancer.prototype.setPosition = function(top, left){
     this.$node.css(styleSettings);
     this.top = top;
     this.left = left;
+    this.checkForNeighbor();
 };
 
 Dancer.prototype.lineUp = function(){
-  this.setPosition(this.top, $("body").width() / 2);
+  this.setPosition($("body").height() / 2, this.left);
 };
 
 Dancer.prototype.distance = function(dancer) {
@@ -46,23 +46,13 @@ Dancer.prototype.checkForNeighbor = function() {
   var context = this;
   window.dancers.forEach(function(dancer) {
 
-    if (context === dancer) {
-      console.log('context:' + context);
-      console.log('dancer:' + dancer);
-    } else {
-      console.log('should be jumping');
-      if (context.distance(dancer) < 30) {
-        context.$node.css({"border-color" : "white"});
-        dancer.$node.css({"border-color" : "white"});
-        var negOrPos = Math.random() < 0.5 ? -1 : 1;
-        context.top += negOrPos * 50;
-        context.left += negOrPos * 50;
-
-
-        context.setPosition(context.top, context.left);
+    if (context !== dancer && context.distance(dancer) < 30) {
+        if (!context.$node.hasClass("white")){
+          context.$node.addClass("white");
+          dancer.$node.addClass("white");
+        }
       }
-    }
   });
-  setTimeout(this.checkForNeighbor.bind(this), 1000);
+ 
 };
 
